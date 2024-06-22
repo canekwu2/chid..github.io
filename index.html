@@ -25,10 +25,10 @@
                 <img src="firstpic.png" alt="Profile Picture">
             </div>
             <div class="quote-section">
-                <blockquote>"The only way to do great work is to love what you do." – Steve Jobs</blockquote>
+                <blockquote id="quote">"The only way to do great work is to love what you do." – Steve Jobs</blockquote>
             </div>
         </div>
-        <div class="about-me-content">
+        <div class="about-me-content" id="about">
             <h1>About Me</h1>
             <p>Hello! I'm [Your Name], a passionate web developer with a love for creating beautiful and functional websites. With a background in HTML, CSS, JavaScript, and a keen eye for design, I strive to build engaging user experiences. In my spare time, I enjoy exploring new technologies, contributing to open-source projects, and experimenting with creative coding.</p>
             <p>When I'm not coding, you can find me hiking in nature, reading science fiction novels, or trying out new recipes in the kitchen. I'm always eager to learn and take on new challenges, and I'm excited to bring my skills and creativity to your next project.</p>
@@ -74,6 +74,11 @@
         <div class="overlay"></div>
     </section>
 
+
+    <section id="interests">
+        <!-- for interests, blogs and so on. COuld add a picture of your chess account -->
+    </section>
+
     <section id="contact">
         <h2>Contact</h2>
         <p>Email: canekwuonye.hba2025@ivey.ca</p>
@@ -81,8 +86,34 @@
         <!-- Add more contact details if needed -->
     </section>
 
+
     <footer>
         <p>&copy; 2024 Chidubem Anekwuonye. All Rights Reserved.</p>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const quoteBank = [
+                    "If you can get 1% better each day for one year, you'll end up thirty-seven times better by the time you're done",
+                    "Most of the time, it is not about the task you are doing, it's about the people you do it with",
+                    "You are the sum of the people around you",
+                    "When life gives you lemons, make lemonade",
+                    "I can do this!",
+                    "You miss 100% of the shots you don't take"
+                ];
+
+                
+            
+
+            function changeQuote() {
+                const quoteElement = document.getElementById('quote');
+                quoteElement.textContent = quoteBank[currentIndex];
+                currentIndex = (currentIndex + 1) % quoteBank.length;
+            }
+
+            let currentIndex=Math.floor(Math.random()*quoteBank.length)
+
+            setInterval(changeQuote, 4000)});
+        </script>
     </footer>
 </body>
 </html>
+
